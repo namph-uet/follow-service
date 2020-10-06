@@ -15,25 +15,30 @@ public final class Follow {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetFollowerRequest_descriptor;
+    internal_static_GetFollowerAndFollowingRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetFollowerRequest_fieldAccessorTable;
+      internal_static_GetFollowerAndFollowingRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetFollowerResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetFollowerResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetFollowingRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetFollowingRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetFollowingResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetFollowingResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddFollowRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddFollowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddFollowResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddFollowResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,15 +48,19 @@ public final class Follow {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014follow.proto\"$\n\022GetFollowerRequest\022\016\n\006" +
-      "userId\030\001 \001(\t\"(\n\023GetFollowerResponse\022\021\n\tf" +
-      "ollowers\030\001 \003(\t\"%\n\023GetFollowingRequest\022\016\n" +
-      "\006userId\030\001 \001(\t\")\n\024GetFollowingResponse\022\021\n" +
-      "\tfollowing\030\001 \003(\t2\211\001\n\020FollowRpcService\0228\n" +
-      "\013getFollower\022\023.GetFollowerRequest\032\024.GetF" +
-      "ollowerResponse\022;\n\014getFollowing\022\024.GetFol" +
-      "lowingRequest\032\025.GetFollowingResponseB\035\n\026" +
-      "web.service.follow.rpcP\001\210\001\001b\006proto3"
+      "\n\014follow.proto\"0\n\036GetFollowerAndFollowin" +
+      "gRequest\022\016\n\006userId\030\001 \001(\t\"(\n\023GetFollowerR" +
+      "esponse\022\021\n\tfollowers\030\001 \003(\t\")\n\024GetFollowi" +
+      "ngResponse\022\021\n\tfollowing\030\001 \003(\t\"H\n\020AddFoll" +
+      "owRequest\022\016\n\006userId\030\001 \001(\t\022\017\n\007userAdd\030\002 \001" +
+      "(\t\022\023\n\013addFollower\030\003 \001(\010\"#\n\021AddFollowResp" +
+      "onse\022\016\n\006status\030\001 \001(\t2\324\001\n\020FollowRpcServic" +
+      "e\022D\n\013getFollower\022\037.GetFollowerAndFollowi" +
+      "ngRequest\032\024.GetFollowerResponse\022F\n\014getFo" +
+      "llowing\022\037.GetFollowerAndFollowingRequest" +
+      "\032\025.GetFollowingResponse\0222\n\taddFollow\022\021.A" +
+      "ddFollowRequest\032\022.AddFollowResponseB\035\n\026w" +
+      "eb.service.follow.rpcP\001\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -65,11 +74,11 @@ public final class Follow {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_GetFollowerRequest_descriptor =
+    internal_static_GetFollowerAndFollowingRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_GetFollowerRequest_fieldAccessorTable = new
+    internal_static_GetFollowerAndFollowingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetFollowerRequest_descriptor,
+        internal_static_GetFollowerAndFollowingRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_GetFollowerResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
@@ -77,18 +86,24 @@ public final class Follow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetFollowerResponse_descriptor,
         new java.lang.String[] { "Followers", });
-    internal_static_GetFollowingRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_GetFollowingRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetFollowingRequest_descriptor,
-        new java.lang.String[] { "UserId", });
     internal_static_GetFollowingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_GetFollowingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetFollowingResponse_descriptor,
         new java.lang.String[] { "Following", });
+    internal_static_AddFollowRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_AddFollowRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddFollowRequest_descriptor,
+        new java.lang.String[] { "UserId", "UserAdd", "AddFollower", });
+    internal_static_AddFollowResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_AddFollowResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddFollowResponse_descriptor,
+        new java.lang.String[] { "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

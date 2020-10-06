@@ -4,18 +4,18 @@
 package web.service.follow.rpc;
 
 /**
- * Protobuf type {@code GetFollowerRequest}
+ * Protobuf type {@code GetFollowerAndFollowingRequest}
  */
-public  final class GetFollowerRequest extends
+public  final class GetFollowerAndFollowingRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetFollowerRequest)
-    GetFollowerRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:GetFollowerAndFollowingRequest)
+    GetFollowerAndFollowingRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetFollowerRequest.newBuilder() to construct.
-  private GetFollowerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetFollowerAndFollowingRequest.newBuilder() to construct.
+  private GetFollowerAndFollowingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetFollowerRequest() {
+  private GetFollowerAndFollowingRequest() {
     userId_ = "";
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetFollowerRequest(
+  private GetFollowerAndFollowingRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,14 +70,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return web.service.follow.rpc.Follow.internal_static_GetFollowerRequest_descriptor;
+    return web.service.follow.rpc.Follow.internal_static_GetFollowerAndFollowingRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return web.service.follow.rpc.Follow.internal_static_GetFollowerRequest_fieldAccessorTable
+    return web.service.follow.rpc.Follow.internal_static_GetFollowerAndFollowingRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            web.service.follow.rpc.GetFollowerRequest.class, web.service.follow.rpc.GetFollowerRequest.Builder.class);
+            web.service.follow.rpc.GetFollowerAndFollowingRequest.class, web.service.follow.rpc.GetFollowerAndFollowingRequest.Builder.class);
   }
 
   public static final int USERID_FIELD_NUMBER = 1;
@@ -150,10 +150,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof web.service.follow.rpc.GetFollowerRequest)) {
+    if (!(obj instanceof web.service.follow.rpc.GetFollowerAndFollowingRequest)) {
       return super.equals(obj);
     }
-    web.service.follow.rpc.GetFollowerRequest other = (web.service.follow.rpc.GetFollowerRequest) obj;
+    web.service.follow.rpc.GetFollowerAndFollowingRequest other = (web.service.follow.rpc.GetFollowerAndFollowingRequest) obj;
 
     boolean result = true;
     result = result && getUserId()
@@ -176,69 +176,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(byte[] data)
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(java.io.InputStream input)
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseDelimitedFrom(java.io.InputStream input)
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseDelimitedFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowerRequest parseFrom(
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -250,7 +250,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(web.service.follow.rpc.GetFollowerRequest prototype) {
+  public static Builder newBuilder(web.service.follow.rpc.GetFollowerAndFollowingRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,25 +265,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetFollowerRequest}
+   * Protobuf type {@code GetFollowerAndFollowingRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetFollowerRequest)
-      web.service.follow.rpc.GetFollowerRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GetFollowerAndFollowingRequest)
+      web.service.follow.rpc.GetFollowerAndFollowingRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowerRequest_descriptor;
+      return web.service.follow.rpc.Follow.internal_static_GetFollowerAndFollowingRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowerRequest_fieldAccessorTable
+      return web.service.follow.rpc.Follow.internal_static_GetFollowerAndFollowingRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              web.service.follow.rpc.GetFollowerRequest.class, web.service.follow.rpc.GetFollowerRequest.Builder.class);
+              web.service.follow.rpc.GetFollowerAndFollowingRequest.class, web.service.follow.rpc.GetFollowerAndFollowingRequest.Builder.class);
     }
 
-    // Construct using web.service.follow.rpc.GetFollowerRequest.newBuilder()
+    // Construct using web.service.follow.rpc.GetFollowerAndFollowingRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -307,23 +307,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowerRequest_descriptor;
+      return web.service.follow.rpc.Follow.internal_static_GetFollowerAndFollowingRequest_descriptor;
     }
 
-    public web.service.follow.rpc.GetFollowerRequest getDefaultInstanceForType() {
-      return web.service.follow.rpc.GetFollowerRequest.getDefaultInstance();
+    public web.service.follow.rpc.GetFollowerAndFollowingRequest getDefaultInstanceForType() {
+      return web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance();
     }
 
-    public web.service.follow.rpc.GetFollowerRequest build() {
-      web.service.follow.rpc.GetFollowerRequest result = buildPartial();
+    public web.service.follow.rpc.GetFollowerAndFollowingRequest build() {
+      web.service.follow.rpc.GetFollowerAndFollowingRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public web.service.follow.rpc.GetFollowerRequest buildPartial() {
-      web.service.follow.rpc.GetFollowerRequest result = new web.service.follow.rpc.GetFollowerRequest(this);
+    public web.service.follow.rpc.GetFollowerAndFollowingRequest buildPartial() {
+      web.service.follow.rpc.GetFollowerAndFollowingRequest result = new web.service.follow.rpc.GetFollowerAndFollowingRequest(this);
       result.userId_ = userId_;
       onBuilt();
       return result;
@@ -356,16 +356,16 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof web.service.follow.rpc.GetFollowerRequest) {
-        return mergeFrom((web.service.follow.rpc.GetFollowerRequest)other);
+      if (other instanceof web.service.follow.rpc.GetFollowerAndFollowingRequest) {
+        return mergeFrom((web.service.follow.rpc.GetFollowerAndFollowingRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(web.service.follow.rpc.GetFollowerRequest other) {
-      if (other == web.service.follow.rpc.GetFollowerRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(web.service.follow.rpc.GetFollowerAndFollowingRequest other) {
+      if (other == web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance()) return this;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
@@ -383,11 +383,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      web.service.follow.rpc.GetFollowerRequest parsedMessage = null;
+      web.service.follow.rpc.GetFollowerAndFollowingRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (web.service.follow.rpc.GetFollowerRequest) e.getUnfinishedMessage();
+        parsedMessage = (web.service.follow.rpc.GetFollowerAndFollowingRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -476,39 +476,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetFollowerRequest)
+    // @@protoc_insertion_point(builder_scope:GetFollowerAndFollowingRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:GetFollowerRequest)
-  private static final web.service.follow.rpc.GetFollowerRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GetFollowerAndFollowingRequest)
+  private static final web.service.follow.rpc.GetFollowerAndFollowingRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new web.service.follow.rpc.GetFollowerRequest();
+    DEFAULT_INSTANCE = new web.service.follow.rpc.GetFollowerAndFollowingRequest();
   }
 
-  public static web.service.follow.rpc.GetFollowerRequest getDefaultInstance() {
+  public static web.service.follow.rpc.GetFollowerAndFollowingRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetFollowerRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetFollowerRequest>() {
-    public GetFollowerRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<GetFollowerAndFollowingRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetFollowerAndFollowingRequest>() {
+    public GetFollowerAndFollowingRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetFollowerRequest(input, extensionRegistry);
+      return new GetFollowerAndFollowingRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetFollowerRequest> parser() {
+  public static com.google.protobuf.Parser<GetFollowerAndFollowingRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetFollowerRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetFollowerAndFollowingRequest> getParserForType() {
     return PARSER;
   }
 
-  public web.service.follow.rpc.GetFollowerRequest getDefaultInstanceForType() {
+  public web.service.follow.rpc.GetFollowerAndFollowingRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

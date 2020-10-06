@@ -1,22 +1,26 @@
 package web.service.follow.service;
 
+import io.grpc.Channel;
+import io.grpc.ManagedChannel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import web.service.follow.model.Follow;
+import web.service.follow.model.Status;
 import web.service.follow.repository.FollowRepository;
-import web.service.follow.rpc.GetFollowerResponse;
-import web.service.follow.rpc.GetFollowingResponse;
+import web.service.follow.rpc.*;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class FollowService {
 
-    private final FollowRepository followRepository;
+    @Autowired
+    private FollowRepository followRepository;
 
-    public FollowService(FollowRepository followRepository) {
-        this.followRepository = followRepository;
-    }
+    @Autowired
+    @Qualifier("follow-service")
+    private ManagedChannel channel;
 
     public GetFollowerResponse getAllFollower(String userId) {
         Follow follow = followRepository.getFollowByUserId(userId);
@@ -24,6 +28,13 @@ public class FollowService {
 
         if(follow != null) {
             response.addAllFollowers(follow.getFollower());
+        }
+        else {
+            follow = new Follow();
+            follow.setUserId(userId);
+            follow.setFollower(new ArrayList<>());
+            follow.setFollowing(new ArrayList<>());
+            followRepository.save(follow);
         }
 
         return response.build();
@@ -36,7 +47,53 @@ public class FollowService {
         if(follow != null) {
             response.addAllFollowing(follow.getFollowing());
         }
+        else {
+            follow = new Follow();
+            follow.setUserId(userId);
+            follow.setFollower(new ArrayList<>());
+            follow.setFollowing(new ArrayList<>());
+            followRepository.save(follow);
+        }
 
         return response.build();
+    }
+
+    public AddFollowResponse addFollowerAndFollowing(AddFollowRequest request) {
+        Follow follow = followRepository.getFollowByUserId(request.getUserId());
+        AddFollowResponse.Builder response = AddFollowResponse.newBuilder();
+        try {
+            if(!checkHaveUser(request.getUserId())) {
+                response.setStatus(Status.CAN_NOT_FIND_USER);
+                return response.build();
+            }
+            else
+            {
+                if(request.getAddFollower())
+                {
+                    if(follow.getFollower() == null) follow.setFollower(new ArrayList<>());
+                    follow.getFollower().add(request.getUserAdd());
+                }
+                else
+                {
+                    if(follow.getFollower() == null) follow.setFollowing(new ArrayList<>());
+                    follow.getFollowing().add(request.getUserAdd());
+                }
+                followRepository.save(follow);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.setStatus(Status.SUCCESS);
+        return response.build();
+    }
+
+    private boolean checkHaveUser(String userId) throws Exception {
+        GetUserRequest.Builder getUserRequest = GetUserRequest.newBuilder();
+        getUserRequest.setUserId(userId);
+        UserServiceGrpc.UserServiceBlockingStub stub = UserServiceGrpc.newBlockingStub(channel);
+        GetUserResponse getUser = null;
+        getUser = stub.getUser(getUserRequest.build());
+        if(getUser != null && getUser.getEmail() != null) return true;
+        return false;
     }
 }

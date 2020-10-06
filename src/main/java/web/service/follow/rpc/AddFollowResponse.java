@@ -4,19 +4,19 @@
 package web.service.follow.rpc;
 
 /**
- * Protobuf type {@code GetFollowingRequest}
+ * Protobuf type {@code AddFollowResponse}
  */
-public  final class GetFollowingRequest extends
+public  final class AddFollowResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:GetFollowingRequest)
-    GetFollowingRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:AddFollowResponse)
+    AddFollowResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetFollowingRequest.newBuilder() to construct.
-  private GetFollowingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AddFollowResponse.newBuilder() to construct.
+  private AddFollowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetFollowingRequest() {
-    userId_ = "";
+  private AddFollowResponse() {
+    status_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetFollowingRequest(
+  private AddFollowResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userId_ = s;
+            status_ = s;
             break;
           }
         }
@@ -70,44 +70,44 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return web.service.follow.rpc.Follow.internal_static_GetFollowingRequest_descriptor;
+    return web.service.follow.rpc.Follow.internal_static_AddFollowResponse_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return web.service.follow.rpc.Follow.internal_static_GetFollowingRequest_fieldAccessorTable
+    return web.service.follow.rpc.Follow.internal_static_AddFollowResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            web.service.follow.rpc.GetFollowingRequest.class, web.service.follow.rpc.GetFollowingRequest.Builder.class);
+            web.service.follow.rpc.AddFollowResponse.class, web.service.follow.rpc.AddFollowResponse.Builder.class);
   }
 
-  public static final int USERID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object userId_;
+  public static final int STATUS_FIELD_NUMBER = 1;
+  private volatile java.lang.Object status_;
   /**
-   * <code>string userId = 1;</code>
+   * <code>string status = 1;</code>
    */
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
+      status_ = s;
       return s;
     }
   }
   /**
-   * <code>string userId = 1;</code>
+   * <code>string status = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
+      getStatusBytes() {
+    java.lang.Object ref = status_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userId_ = b;
+      status_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -126,8 +126,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, status_);
     }
     unknownFields.writeTo(output);
   }
@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -150,14 +150,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof web.service.follow.rpc.GetFollowingRequest)) {
+    if (!(obj instanceof web.service.follow.rpc.AddFollowResponse)) {
       return super.equals(obj);
     }
-    web.service.follow.rpc.GetFollowingRequest other = (web.service.follow.rpc.GetFollowingRequest) obj;
+    web.service.follow.rpc.AddFollowResponse other = (web.service.follow.rpc.AddFollowResponse) obj;
 
     boolean result = true;
-    result = result && getUserId()
-        .equals(other.getUserId());
+    result = result && getStatus()
+        .equals(other.getStatus());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -169,76 +169,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(byte[] data)
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(java.io.InputStream input)
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseDelimitedFrom(java.io.InputStream input)
+  public static web.service.follow.rpc.AddFollowResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseDelimitedFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static web.service.follow.rpc.GetFollowingRequest parseFrom(
+  public static web.service.follow.rpc.AddFollowResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -250,7 +250,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(web.service.follow.rpc.GetFollowingRequest prototype) {
+  public static Builder newBuilder(web.service.follow.rpc.AddFollowResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,25 +265,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code GetFollowingRequest}
+   * Protobuf type {@code AddFollowResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:GetFollowingRequest)
-      web.service.follow.rpc.GetFollowingRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:AddFollowResponse)
+      web.service.follow.rpc.AddFollowResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowingRequest_descriptor;
+      return web.service.follow.rpc.Follow.internal_static_AddFollowResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowingRequest_fieldAccessorTable
+      return web.service.follow.rpc.Follow.internal_static_AddFollowResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              web.service.follow.rpc.GetFollowingRequest.class, web.service.follow.rpc.GetFollowingRequest.Builder.class);
+              web.service.follow.rpc.AddFollowResponse.class, web.service.follow.rpc.AddFollowResponse.Builder.class);
     }
 
-    // Construct using web.service.follow.rpc.GetFollowingRequest.newBuilder()
+    // Construct using web.service.follow.rpc.AddFollowResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -300,31 +300,31 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      userId_ = "";
+      status_ = "";
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return web.service.follow.rpc.Follow.internal_static_GetFollowingRequest_descriptor;
+      return web.service.follow.rpc.Follow.internal_static_AddFollowResponse_descriptor;
     }
 
-    public web.service.follow.rpc.GetFollowingRequest getDefaultInstanceForType() {
-      return web.service.follow.rpc.GetFollowingRequest.getDefaultInstance();
+    public web.service.follow.rpc.AddFollowResponse getDefaultInstanceForType() {
+      return web.service.follow.rpc.AddFollowResponse.getDefaultInstance();
     }
 
-    public web.service.follow.rpc.GetFollowingRequest build() {
-      web.service.follow.rpc.GetFollowingRequest result = buildPartial();
+    public web.service.follow.rpc.AddFollowResponse build() {
+      web.service.follow.rpc.AddFollowResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public web.service.follow.rpc.GetFollowingRequest buildPartial() {
-      web.service.follow.rpc.GetFollowingRequest result = new web.service.follow.rpc.GetFollowingRequest(this);
-      result.userId_ = userId_;
+    public web.service.follow.rpc.AddFollowResponse buildPartial() {
+      web.service.follow.rpc.AddFollowResponse result = new web.service.follow.rpc.AddFollowResponse(this);
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -356,18 +356,18 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof web.service.follow.rpc.GetFollowingRequest) {
-        return mergeFrom((web.service.follow.rpc.GetFollowingRequest)other);
+      if (other instanceof web.service.follow.rpc.AddFollowResponse) {
+        return mergeFrom((web.service.follow.rpc.AddFollowResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(web.service.follow.rpc.GetFollowingRequest other) {
-      if (other == web.service.follow.rpc.GetFollowingRequest.getDefaultInstance()) return this;
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
+    public Builder mergeFrom(web.service.follow.rpc.AddFollowResponse other) {
+      if (other == web.service.follow.rpc.AddFollowResponse.getDefaultInstance()) return this;
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -383,11 +383,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      web.service.follow.rpc.GetFollowingRequest parsedMessage = null;
+      web.service.follow.rpc.AddFollowResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (web.service.follow.rpc.GetFollowingRequest) e.getUnfinishedMessage();
+        parsedMessage = (web.service.follow.rpc.AddFollowResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -397,71 +397,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userId_ = "";
+    private java.lang.Object status_ = "";
     /**
-     * <code>string userId = 1;</code>
+     * <code>string status = 1;</code>
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        status_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>string status = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getStatusBytes() {
+      java.lang.Object ref = status_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>string status = 1;</code>
      */
-    public Builder setUserId(
+    public Builder setStatus(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      userId_ = value;
+      status_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>string status = 1;</code>
      */
-    public Builder clearUserId() {
+    public Builder clearStatus() {
       
-      userId_ = getDefaultInstance().getUserId();
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>string status = 1;</code>
      */
-    public Builder setUserIdBytes(
+    public Builder setStatusBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      userId_ = value;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -476,39 +476,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:GetFollowingRequest)
+    // @@protoc_insertion_point(builder_scope:AddFollowResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:GetFollowingRequest)
-  private static final web.service.follow.rpc.GetFollowingRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:AddFollowResponse)
+  private static final web.service.follow.rpc.AddFollowResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new web.service.follow.rpc.GetFollowingRequest();
+    DEFAULT_INSTANCE = new web.service.follow.rpc.AddFollowResponse();
   }
 
-  public static web.service.follow.rpc.GetFollowingRequest getDefaultInstance() {
+  public static web.service.follow.rpc.AddFollowResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetFollowingRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetFollowingRequest>() {
-    public GetFollowingRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<AddFollowResponse>
+      PARSER = new com.google.protobuf.AbstractParser<AddFollowResponse>() {
+    public AddFollowResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetFollowingRequest(input, extensionRegistry);
+      return new AddFollowResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetFollowingRequest> parser() {
+  public static com.google.protobuf.Parser<AddFollowResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetFollowingRequest> getParserForType() {
+  public com.google.protobuf.Parser<AddFollowResponse> getParserForType() {
     return PARSER;
   }
 
-  public web.service.follow.rpc.GetFollowingRequest getDefaultInstanceForType() {
+  public web.service.follow.rpc.AddFollowResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

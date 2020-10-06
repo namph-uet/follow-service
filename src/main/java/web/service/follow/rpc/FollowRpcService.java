@@ -12,20 +12,28 @@ public  abstract class FollowRpcService
 
   public interface Interface {
     /**
-     * <code>rpc getFollower(.GetFollowerRequest) returns (.GetFollowerResponse);</code>
+     * <code>rpc getFollower(.GetFollowerAndFollowingRequest) returns (.GetFollowerResponse);</code>
      */
     public abstract void getFollower(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowerRequest request,
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request,
         com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowerResponse> done);
 
     /**
-     * <code>rpc getFollowing(.GetFollowingRequest) returns (.GetFollowingResponse);</code>
+     * <code>rpc getFollowing(.GetFollowerAndFollowingRequest) returns (.GetFollowingResponse);</code>
      */
     public abstract void getFollowing(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowingRequest request,
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request,
         com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowingResponse> done);
+
+    /**
+     * <code>rpc addFollow(.AddFollowRequest) returns (.AddFollowResponse);</code>
+     */
+    public abstract void addFollow(
+        com.google.protobuf.RpcController controller,
+        web.service.follow.rpc.AddFollowRequest request,
+        com.google.protobuf.RpcCallback<web.service.follow.rpc.AddFollowResponse> done);
 
   }
 
@@ -35,7 +43,7 @@ public  abstract class FollowRpcService
       @java.lang.Override
       public  void getFollower(
           com.google.protobuf.RpcController controller,
-          web.service.follow.rpc.GetFollowerRequest request,
+          web.service.follow.rpc.GetFollowerAndFollowingRequest request,
           com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowerResponse> done) {
         impl.getFollower(controller, request, done);
       }
@@ -43,9 +51,17 @@ public  abstract class FollowRpcService
       @java.lang.Override
       public  void getFollowing(
           com.google.protobuf.RpcController controller,
-          web.service.follow.rpc.GetFollowingRequest request,
+          web.service.follow.rpc.GetFollowerAndFollowingRequest request,
           com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowingResponse> done) {
         impl.getFollowing(controller, request, done);
+      }
+
+      @java.lang.Override
+      public  void addFollow(
+          com.google.protobuf.RpcController controller,
+          web.service.follow.rpc.AddFollowRequest request,
+          com.google.protobuf.RpcCallback<web.service.follow.rpc.AddFollowResponse> done) {
+        impl.addFollow(controller, request, done);
       }
 
     };
@@ -71,9 +87,11 @@ public  abstract class FollowRpcService
         }
         switch(method.getIndex()) {
           case 0:
-            return impl.getFollower(controller, (web.service.follow.rpc.GetFollowerRequest)request);
+            return impl.getFollower(controller, (web.service.follow.rpc.GetFollowerAndFollowingRequest)request);
           case 1:
-            return impl.getFollowing(controller, (web.service.follow.rpc.GetFollowingRequest)request);
+            return impl.getFollowing(controller, (web.service.follow.rpc.GetFollowerAndFollowingRequest)request);
+          case 2:
+            return impl.addFollow(controller, (web.service.follow.rpc.AddFollowRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -89,9 +107,11 @@ public  abstract class FollowRpcService
         }
         switch(method.getIndex()) {
           case 0:
-            return web.service.follow.rpc.GetFollowerRequest.getDefaultInstance();
+            return web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance();
           case 1:
-            return web.service.follow.rpc.GetFollowingRequest.getDefaultInstance();
+            return web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance();
+          case 2:
+            return web.service.follow.rpc.AddFollowRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -110,6 +130,8 @@ public  abstract class FollowRpcService
             return web.service.follow.rpc.GetFollowerResponse.getDefaultInstance();
           case 1:
             return web.service.follow.rpc.GetFollowingResponse.getDefaultInstance();
+          case 2:
+            return web.service.follow.rpc.AddFollowResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -119,20 +141,28 @@ public  abstract class FollowRpcService
   }
 
   /**
-   * <code>rpc getFollower(.GetFollowerRequest) returns (.GetFollowerResponse);</code>
+   * <code>rpc getFollower(.GetFollowerAndFollowingRequest) returns (.GetFollowerResponse);</code>
    */
   public abstract void getFollower(
       com.google.protobuf.RpcController controller,
-      web.service.follow.rpc.GetFollowerRequest request,
+      web.service.follow.rpc.GetFollowerAndFollowingRequest request,
       com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowerResponse> done);
 
   /**
-   * <code>rpc getFollowing(.GetFollowingRequest) returns (.GetFollowingResponse);</code>
+   * <code>rpc getFollowing(.GetFollowerAndFollowingRequest) returns (.GetFollowingResponse);</code>
    */
   public abstract void getFollowing(
       com.google.protobuf.RpcController controller,
-      web.service.follow.rpc.GetFollowingRequest request,
+      web.service.follow.rpc.GetFollowerAndFollowingRequest request,
       com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowingResponse> done);
+
+  /**
+   * <code>rpc addFollow(.AddFollowRequest) returns (.AddFollowResponse);</code>
+   */
+  public abstract void addFollow(
+      com.google.protobuf.RpcController controller,
+      web.service.follow.rpc.AddFollowRequest request,
+      com.google.protobuf.RpcCallback<web.service.follow.rpc.AddFollowResponse> done);
 
   public static final
       com.google.protobuf.Descriptors.ServiceDescriptor
@@ -157,13 +187,18 @@ public  abstract class FollowRpcService
     }
     switch(method.getIndex()) {
       case 0:
-        this.getFollower(controller, (web.service.follow.rpc.GetFollowerRequest)request,
+        this.getFollower(controller, (web.service.follow.rpc.GetFollowerAndFollowingRequest)request,
           com.google.protobuf.RpcUtil.<web.service.follow.rpc.GetFollowerResponse>specializeCallback(
             done));
         return;
       case 1:
-        this.getFollowing(controller, (web.service.follow.rpc.GetFollowingRequest)request,
+        this.getFollowing(controller, (web.service.follow.rpc.GetFollowerAndFollowingRequest)request,
           com.google.protobuf.RpcUtil.<web.service.follow.rpc.GetFollowingResponse>specializeCallback(
+            done));
+        return;
+      case 2:
+        this.addFollow(controller, (web.service.follow.rpc.AddFollowRequest)request,
+          com.google.protobuf.RpcUtil.<web.service.follow.rpc.AddFollowResponse>specializeCallback(
             done));
         return;
       default:
@@ -181,9 +216,11 @@ public  abstract class FollowRpcService
     }
     switch(method.getIndex()) {
       case 0:
-        return web.service.follow.rpc.GetFollowerRequest.getDefaultInstance();
+        return web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance();
       case 1:
-        return web.service.follow.rpc.GetFollowingRequest.getDefaultInstance();
+        return web.service.follow.rpc.GetFollowerAndFollowingRequest.getDefaultInstance();
+      case 2:
+        return web.service.follow.rpc.AddFollowRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -202,6 +239,8 @@ public  abstract class FollowRpcService
         return web.service.follow.rpc.GetFollowerResponse.getDefaultInstance();
       case 1:
         return web.service.follow.rpc.GetFollowingResponse.getDefaultInstance();
+      case 2:
+        return web.service.follow.rpc.AddFollowResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -225,7 +264,7 @@ public  abstract class FollowRpcService
 
     public  void getFollower(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowerRequest request,
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request,
         com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowerResponse> done) {
       channel.callMethod(
         getDescriptor().getMethods().get(0),
@@ -240,7 +279,7 @@ public  abstract class FollowRpcService
 
     public  void getFollowing(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowingRequest request,
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request,
         com.google.protobuf.RpcCallback<web.service.follow.rpc.GetFollowingResponse> done) {
       channel.callMethod(
         getDescriptor().getMethods().get(1),
@@ -252,6 +291,21 @@ public  abstract class FollowRpcService
           web.service.follow.rpc.GetFollowingResponse.class,
           web.service.follow.rpc.GetFollowingResponse.getDefaultInstance()));
     }
+
+    public  void addFollow(
+        com.google.protobuf.RpcController controller,
+        web.service.follow.rpc.AddFollowRequest request,
+        com.google.protobuf.RpcCallback<web.service.follow.rpc.AddFollowResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(2),
+        controller,
+        request,
+        web.service.follow.rpc.AddFollowResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          web.service.follow.rpc.AddFollowResponse.class,
+          web.service.follow.rpc.AddFollowResponse.getDefaultInstance()));
+    }
   }
 
   public static BlockingInterface newBlockingStub(
@@ -262,12 +316,17 @@ public  abstract class FollowRpcService
   public interface BlockingInterface {
     public web.service.follow.rpc.GetFollowerResponse getFollower(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowerRequest request)
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request)
         throws com.google.protobuf.ServiceException;
 
     public web.service.follow.rpc.GetFollowingResponse getFollowing(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowingRequest request)
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public web.service.follow.rpc.AddFollowResponse addFollow(
+        com.google.protobuf.RpcController controller,
+        web.service.follow.rpc.AddFollowRequest request)
         throws com.google.protobuf.ServiceException;
   }
 
@@ -280,7 +339,7 @@ public  abstract class FollowRpcService
 
     public web.service.follow.rpc.GetFollowerResponse getFollower(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowerRequest request)
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request)
         throws com.google.protobuf.ServiceException {
       return (web.service.follow.rpc.GetFollowerResponse) channel.callBlockingMethod(
         getDescriptor().getMethods().get(0),
@@ -292,13 +351,25 @@ public  abstract class FollowRpcService
 
     public web.service.follow.rpc.GetFollowingResponse getFollowing(
         com.google.protobuf.RpcController controller,
-        web.service.follow.rpc.GetFollowingRequest request)
+        web.service.follow.rpc.GetFollowerAndFollowingRequest request)
         throws com.google.protobuf.ServiceException {
       return (web.service.follow.rpc.GetFollowingResponse) channel.callBlockingMethod(
         getDescriptor().getMethods().get(1),
         controller,
         request,
         web.service.follow.rpc.GetFollowingResponse.getDefaultInstance());
+    }
+
+
+    public web.service.follow.rpc.AddFollowResponse addFollow(
+        com.google.protobuf.RpcController controller,
+        web.service.follow.rpc.AddFollowRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (web.service.follow.rpc.AddFollowResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(2),
+        controller,
+        request,
+        web.service.follow.rpc.AddFollowResponse.getDefaultInstance());
     }
 
   }

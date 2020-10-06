@@ -3,8 +3,8 @@
 
 package web.service.follow.rpc;
 
-public interface GetFollowingRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:GetFollowingRequest)
+public interface GetFollowerAndFollowingRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:GetFollowerAndFollowingRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
