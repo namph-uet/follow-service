@@ -19,7 +19,7 @@ public class FollowService {
     private FollowRepository followRepository;
 
     @Autowired
-    @Qualifier("follow-service")
+    @Qualifier("user-service")
     private ManagedChannel channel;
 
     public GetFollowerResponse getAllFollower(String userId) {
@@ -27,7 +27,8 @@ public class FollowService {
         GetFollowerResponse.Builder response = GetFollowerResponse.newBuilder();
 
         if(follow != null) {
-            response.addAllFollowers(follow.getFollower());
+            if(follow.getFollower() != null)
+                response.addAllFollowers(follow.getFollower());
         }
         else {
             follow = new Follow();

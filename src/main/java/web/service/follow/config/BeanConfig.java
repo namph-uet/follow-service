@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanConfig {
-    @Bean("follow-service")
+    @Bean("user-service")
     ManagedChannel userGrpcBeanChanel(){
         return ManagedChannelBuilder.forAddress("localhost", 6567).usePlaintext().build();
     }
