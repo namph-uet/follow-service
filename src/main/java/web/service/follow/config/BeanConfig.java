@@ -5,6 +5,8 @@ import io.grpc.ManagedChannelBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class BeanConfig {
     @Bean("user-service")
