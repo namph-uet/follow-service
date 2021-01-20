@@ -46,7 +46,9 @@ public class FollowService {
         GetFollowingResponse.Builder response = GetFollowingResponse.newBuilder();
 
         if(follow != null) {
-            response.addAllFollowing(follow.getFollowing());
+            response.addAllFollowing(follow.getFollowing() == null ?
+                    new ArrayList<String>() :
+                    follow.getFollowing());
         }
         else {
             follow = new Follow();
