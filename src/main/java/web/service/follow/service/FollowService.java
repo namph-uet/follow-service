@@ -78,8 +78,8 @@ public class FollowService {
                 }
                 else
                 {
-                    if(follow.getFollower() == null) follow.setFollowing(new ArrayList<>());
-                    follow.getFollowing().add(request.getUserAdd());
+                    if(follow.getFollower() == null) follow.setFollower(new ArrayList<>());
+                    follow.getFollower().add(request.getUserAdd());
                 }
                 followRepository.save(follow);
             }
